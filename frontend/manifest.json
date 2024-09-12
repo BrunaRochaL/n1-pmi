@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Detector de Fraudes",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["*://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {}
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "icons": {}
+}
